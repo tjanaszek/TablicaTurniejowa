@@ -48,7 +48,7 @@
 <h1>Logowanie</h1>
 <!--Do zrobienia akcja sprawdzająca poprawność i w zależności
 od niej przekierowująca na panel użytkownika lub wyświetlająca info o błędzie-->
-<form>
+<form action="#" data-th-action="@{/login}"  method="post">
     <p>Adres mailowy</p>
     <input type="email" required>
     <p>Hasło</p>
