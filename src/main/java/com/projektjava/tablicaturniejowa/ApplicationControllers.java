@@ -31,5 +31,26 @@ public class ApplicationControllers {
         }
         return "loginOrRegister";
     }
+    //akcja do przycisku "Zaloguj"
+//    @RequestMapping("/login")
+//    public String login(@RequestParam(value="action", required=true) String action) {
+//        if (action.equals("login")) {
+//            return "redirect:/logowanie";
+//        } else if (action.equals("register")) {
+//            return "redirect:/rejestracja";
+//        }
+//        return "login";
+//    }
+
+    //akcja do przycisku "Zarejestruj się"
+//    @RequestMapping("/login")
+//    public String login(@RequestParam(value="action", required=true) String action) {
+//        if (action.equals("login")) {
+//            return "redirect:/logowanie";
+//        } else if (action.equals("register")) {
+//            return "redirect:/rejestracja";
+//        }
+//        return "login";
+//    }
 
 }
