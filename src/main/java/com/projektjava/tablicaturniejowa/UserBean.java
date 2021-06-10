@@ -3,19 +3,33 @@ package com.projektjava.tablicaturniejowa;
 import java.io.Serializable;
 
 public class UserBean implements Serializable {
+    int idUser;
     String name;
     String surname;
-    String mail;
+    String userName;
     String password;
+    int idTournament;
+    int points;
 
     public UserBean() {
     }
 
-    public UserBean(String name, String surname, String mail, String password) {
-        this.name=name;
-        this.surname=surname;
-        this.mail=mail;
-        this.password=password;
+    public UserBean(int idUser, String name, String surname, String userName, String password, int idTournament, int points) {
+        this.idUser = idUser;
+        this.name = name;
+        this.surname = surname;
+        this.userName = userName;
+        this.password = password;
+        this.idTournament = idTournament;
+        this.points = points;
+    }
+
+    public int getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(int idUser) {
+        this.idUser = idUser;
     }
 
     public String getName() {
@@ -34,12 +48,12 @@ public class UserBean implements Serializable {
         this.surname = surname;
     }
 
-    public String getMail() {
-        return mail;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setMail(String mail) {
-        this.mail = mail;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPassword() {
@@ -48,6 +62,22 @@ public class UserBean implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public int getIdTournament() {
+        return idTournament;
+    }
+
+    public void setIdTournament(int idTournament) {
+        this.idTournament = idTournament;
+    }
+
+    public int getPoints() {
+        return points;
+    }
+
+    public void setPoints(int points) {
+        this.points = points;
     }
 }
 
