@@ -11,6 +11,13 @@ public class ApplicationControllers {
     @RequestMapping("/")
     public String get(Model model) {
         model.addAttribute("name","Anonymous");
+        TournamentJDBCDAO tournament = new TournamentJDBCDAO();
+        TournamentBean alok= new TournamentBean();
+        alok.setIdTournament(1);
+        alok.setOpen(true);
+        alok.setPlayers(4);
+        tournament.add(alok);
+        tournament.findAll();
         return "index";
     }
     @RequestMapping("/logowanie")
