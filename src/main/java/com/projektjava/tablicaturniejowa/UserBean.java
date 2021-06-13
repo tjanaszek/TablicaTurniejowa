@@ -6,22 +6,31 @@ public class UserBean implements Serializable {
     int idUser;
     String name;
     String surname;
-    String userName;
+    String user_name;
     String password;
     int idTournament;
     int points;
+    int admin;
 
     public UserBean() {
     }
 
-    public UserBean(int idUser, String name, String surname, String userName, String password, int idTournament, int points) {
+    /*public UserBean(int idUser, String name, String surname, String user_name, String password, int idTournament, int points, int adm) {
         this.idUser = idUser;
         this.name = name;
         this.surname = surname;
-        this.userName = userName;
+        this.user_name = user_name;
         this.password = password;
         this.idTournament = idTournament;
         this.points = points;
+        this.admin = adm;
+    }*/
+
+    public UserBean(String name, String surname, String user_name, String password) {
+        this.name = name;
+        this.surname = surname;
+        this.user_name = user_name;
+        this.password = password;
     }
 
     public int getIdUser() {
@@ -49,11 +58,11 @@ public class UserBean implements Serializable {
     }
 
     public String getUserName() {
-        return userName;
+        return user_name;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUserName(String user_name) {
+        this.user_name = user_name;
     }
 
     public String getPassword() {
@@ -79,6 +88,10 @@ public class UserBean implements Serializable {
     public void setPoints(int points) {
         this.points = points;
     }
+
+    public int getAdmin(){return admin;}
+
+    public void setAdmin(int ad){this.admin=ad;}
 }
 
 
