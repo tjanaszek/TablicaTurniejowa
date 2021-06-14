@@ -119,4 +119,32 @@ public class UserJDBCDAO {
             }
         }
     }
+
+    public User findUserName(String userName) {
+        User user = new User();
+        try {
+            String queryString = "SELECT * FROM users where user_name = '"+ userName+ "'";
+            connection = getConnection();
+            ptmt = connection.prepareStatement(queryString);
+            resultSet = ptmt.executeQuery();
+            resultSet.next();
+            user = new User(resultSet.getString("name"), resultSet.getString("surname"), resultSet.getString("user_name"), resultSet.getString("password"), resultSet.getInt("id_u"),resultSet.getInt("admin") );
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (resultSet != null)
+                    resultSet.close();
+                if (ptmt != null)
+                    ptmt.close();
+                if (connection != null)
+                    connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return user;
+    }
 }

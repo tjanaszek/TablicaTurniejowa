@@ -16,19 +16,12 @@ public class ApplicationControllers {
     @RequestMapping("/")
     public String get(Model model) {
         model.addAttribute("name","Anonymous");
-        TournamentJDBCDAO tournament = new TournamentJDBCDAO();
-        TournamentBean alok= new TournamentBean();
-        alok.setIdTournament(1);
-        alok.setOpen(true);
-        alok.setPlayers(4);
-        tournament.add(alok);
-        tournament.findAll();
         return "index";
     }
     @RequestMapping("/logowanie")
-    public String loginPage(@RequestParam(required = false, name="user_name") String user_name, @RequestParam(required = false, name="password") String password, Model model) {
-        User curr = userRepo.findlogin(user_name);
-        if (curr.getpassword().equals(password)){
+    public String loginPage(User user, Model model) {
+        User curr = userRepo.findUserName(user.user_name);
+        if (curr.getpassword().equals(user.password)){
             if (curr.getadmin() == 1){
                 model.addAttribute("administrator", curr);
                 return "stronaadmina";

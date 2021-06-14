@@ -54,11 +54,13 @@ public class User {
         this.admin = adm;
     }*/
 
-    public User(String name, String surname, String user_name, String password) {
+    public User(String name, String surname, String user_name, String password, int idUser, int admin ) {
         this.name = name;
         this.surname = surname;
         this.user_name = user_name;
         this.password = password;
+        this.idUser=idUser;
+        this.admin=admin;
     }
 
     public int getidUser() {

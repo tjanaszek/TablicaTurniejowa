@@ -50,7 +50,7 @@
 od niej przekierowująca na panel użytkownika lub wyświetlająca info o błędzie-->
 <form action="#" data-th-action="@{/logowanie}" th:object="${user}" method="post">
     <p>Nazwa użytkownika</p>
-    <input type="user_name" th:field="*{user_name}" required>
+    <input type="text" th:field="*{user_name}" required>
     <p>Hasło</p>
     <input type="password" th:field="*{password}" required>
     <input class="button" type="submit" value="ZALOGUJ SIĘ">
